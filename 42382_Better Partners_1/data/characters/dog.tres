@@ -1,0 +1,96 @@
+[gd_resource type="Resource" load_steps=12 format=2]
+
+[ext_resource path="res://data/Character.gd" type="Script" id=1]
+[ext_resource path="res://data/MonsterTape.gd" type="Script" id=2]
+[ext_resource path="res://sprites/characters/battle/dog.json" type="PackedScene" id=3]
+[ext_resource path="res://data/monster_forms/pombomb.tres" type="Resource" id=4]
+[ext_resource path="res://sprites/characters/world/dog.json" type="PackedScene" id=5]
+[ext_resource path="res://data/battle_moves/spit.tres" type="Resource" id=6]
+[ext_resource path="res://data/battle_moves/dog_years.tres" type="Resource" id=7]
+[ext_resource path="res://data/elemental_types/ice.tres" type="Resource" id=8]
+[ext_resource path="res://data/character_sfx/dog_sfx.tres" type="Resource" id=9]
+[ext_resource path="res://data/battle_moves/sticky_tongue.tres" type="Resource" id=10]
+
+[sub_resource type="Resource" id=1]
+resource_name = "pombomb Gr0 ice"
+script = ExtResource( 2 )
+name_override = ""
+form = ExtResource( 4 )
+grade = 0
+seed_value = 0
+type_override = [ ExtResource( 8 ) ]
+type_native = [  ]
+stickers = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 10 ) ]
+stat_increments = {
+}
+exp_points = 0
+favorite = true
+
+[resource]
+resource_name = "dog.tres"
+script = ExtResource( 1 )
+name = "DOG_NAME"
+swap_colors = [  ]
+default_palette = [  ]
+emission_palette = [  ]
+named_positions = {
+"attack": Vector2( 36, 23 ),
+"eye": Vector2( 27, 19 ),
+"hit": Vector2( 23, 23 )
+}
+elemental_types = [  ]
+exp_yield = 40
+require_dlc = ""
+battle_sprite = ExtResource( 3 )
+character_kind = 1
+force_unrecordable = false
+human_colors = {
+"body_color_1": 16,
+"body_color_2": 16,
+"eye_color": 16,
+"face_accessory_color": 16,
+"favorite_color": 7,
+"hair_accessory_color": 16,
+"hair_color": 16,
+"legs_color": 16,
+"shoe_color": 16,
+"skin_color": 16
+}
+human_part_names = {
+"arms": "sweater1",
+"body": "sweater1",
+"hair": "short",
+"head": "generic",
+"legs": "",
+"wings": "dog"
+}
+world_sprite = ExtResource( 5 )
+level = 100
+pronouns = 0
+max_ap = 5
+base_ap_regen = 2
+base_max_hp = 120
+base_melee_attack = 110
+base_melee_defense = 100
+base_ranged_attack = 110
+base_ranged_defense = 100
+base_speed = 130
+base_accuracy = 100
+base_evasion = 100
+tapes = [ SubResource( 1 ) ]
+team_name_override = ""
+exp_gradient = 5
+exp_base_level = 0
+partner_id = "dog"
+partner_signature_species = ExtResource( 4 )
+sfx = ExtResource( 9 )
+human_colors/body_color_1 = 16
+human_colors/body_color_2 = 16
+human_colors/eye_color = 16
+human_colors/face_accessory_color = 16
+human_colors/favorite_color = 7
+human_colors/hair_accessory_color = 16
+human_colors/hair_color = 16
+human_colors/legs_color = 16
+human_colors/shoe_color = 16
+human_colors/skin_color = 16

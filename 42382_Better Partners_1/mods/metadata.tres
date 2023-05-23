@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/ContentInfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = "bluhbluhhugeswitch"
+name = "Better Partners"
+version_code = 2
+version_string = "1"
+author = "gnostalgicMnemonic"
+save_file_format_tag = ""
+save_file_format_tag_version = 0
+network_protocol_tag = "BetterPartners1"
+modified_files = [ "res://data/characters/dog.tres", "res://data/characters/eugene.tres", "res://data/characters/felix.tres", "res://data/characters/kayleigh.tres", "res://data/characters/meredith.tres", "res://data/characters/viola.tres" ]
+modified_dirs = [  ]
