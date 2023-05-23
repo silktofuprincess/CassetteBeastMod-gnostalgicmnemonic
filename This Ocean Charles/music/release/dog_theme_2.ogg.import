@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dog_theme_2.ogg-949bf62a4f6b9450c48e65d27219a32e.oggstr"
+
+[deps]
+
+source_file="res://music/release/dog_theme_2.ogg"
+dest_files=[ "res://.import/dog_theme_2.ogg-949bf62a4f6b9450c48e65d27219a32e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0.387
