@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://mods/de_onelimited_romance/onelimited_strings.en.translation" ]
+
+source_file="res://mods/de_onelimited_romance/onelimited_strings.csv"
+dest_files=[ "res://mods/de_onelimited_romance/onelimited_strings.en.translation" ]
+
+[params]
+
+compress=false
+delimiter=0

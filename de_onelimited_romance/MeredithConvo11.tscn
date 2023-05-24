@@ -1,0 +1,133 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sprites/portraits/meredith_happy.png" type="Texture" id=1]
+[ext_resource path="res://sfx/voices/meredith/meredith_awkward.wav" type="AudioStream" id=2]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=3]
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=4]
+[ext_resource path="res://nodes/actions/IsPlayerPronoun.gd" type="Script" id=5]
+[ext_resource path="res://sfx/voices/meredith/meredith_laugh_1.wav" type="AudioStream" id=6]
+[ext_resource path="res://nodes/actions/MenuDialogAction.gd" type="Script" id=7]
+[ext_resource path="res://sprites/portraits/meredith_awkward.png" type="Texture" id=8]
+[ext_resource path="res://sprites/portraits/meredith_blushing.png" type="Texture" id=9]
+[ext_resource path="res://sprites/portraits/meredith_thinking.png" type="Texture" id=10]
+[ext_resource path="res://sprites/portraits/meredith_shocked.png" type="Texture" id=11]
+[ext_resource path="res://sprites/portraits/meredith_shocked_open.png" type="Texture" id=12]
+[ext_resource path="res://sfx/voices/meredith/meredith_awkward_2.wav" type="AudioStream" id=13]
+[ext_resource path="res://sfx/voices/meredith/meredith_thinking_4.wav" type="AudioStream" id=14]
+[ext_resource path="res://sfx/voices/meredith/meredith_thinking_2.wav" type="AudioStream" id=15]
+[ext_resource path="res://sfx/voices/meredith/meredith_surprise_3.wav" type="AudioStream" id=16]
+
+[node name="Cutscene" type="Node"]
+script = ExtResource( 4 )
+one_time_flag = "meredith_convo_11"
+require_flags = [ "player_romanced_kayleigh" ]
+require_partner_id = "meredith"
+require_partner_relationship_min = 1
+
+[node name="MessageDialogAction3" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 9 )
+audio = ExtResource( 2 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_CONVO11_MEREDITH1" ]
+wait_for_confirm = false
+close_after = false
+
+[node name="MenuDialogAction" type="Node" parent="MessageDialogAction3"]
+script = ExtResource( 7 )
+menu_options = [ "MEREDITH_CONVO11_MEREDITH1_OPTION1", "MEREDITH_CONVO11_MEREDITH1_OPTION2" ]
+always_succeed = true
+
+[node name="MessageDialogAction4" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 8 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_CONVO11_MEREDITH2", "MEREDITH_CONVO11_MEREDITH3", "MEREDITH_CONVO11_MEREDITH4" ]
+close_after = false
+
+[node name="IsPlayerPronoun" type="Node" parent="."]
+script = ExtResource( 5 )
+pronouns = 1
+always_succeed = true
+
+[node name="MessageDialogAction5" type="Node" parent="IsPlayerPronoun"]
+script = ExtResource( 3 )
+portrait = ExtResource( 8 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_CONVO11_MEREDITH5" ]
+close_after = false
+
+[node name="MessageDialogAction6" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 9 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_1", "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_2_1" ]
+close_after = false
+
+[node name="MessageDialogAction7" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 8 )
+audio = ExtResource( 14 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_2_2" ]
+close_after = false
+
+[node name="MessageDialogAction8" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 8 )
+audio = ExtResource( 13 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_3", "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_4" ]
+close_after = false
+
+[node name="MessageDialogAction9" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 8 )
+audio = ExtResource( 6 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_5" ]
+close_after = false
+
+[node name="MessageDialogAction10" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 11 )
+audio = ExtResource( 15 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_6_1" ]
+close_after = false
+
+[node name="MessageDialogAction11" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 12 )
+audio = ExtResource( 16 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_6_2" ]
+close_after = false
+
+[node name="MessageDialogAction12" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 1 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_7" ]
+close_after = false
+
+[node name="MessageDialogAction13" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 10 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_8", "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_9" ]
+close_after = false
+
+[node name="MessageDialogAction14" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 8 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_10" ]
+close_after = false
+
+[node name="MessageDialogAction15" type="Node" parent="."]
+script = ExtResource( 3 )
+portrait = ExtResource( 9 )
+audio = ExtResource( 2 )
+title = "MEREDITH_NAME"
+messages = [ "MOD_ONELIMITED_ROMANCE_MEREDITHKAYLEIGH_11" ]
