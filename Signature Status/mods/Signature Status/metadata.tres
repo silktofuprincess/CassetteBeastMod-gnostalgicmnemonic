@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/ContentInfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = "Signature_Status"
+name = "Signature Status"
+version_code = 3
+version_string = "3.0"
+author = "gnostalgicMnemonic"
+save_file_format_tag = ""
+save_file_format_tag_version = 0
+network_protocol_tag = "SigStat+Pom"
+modified_files = [ "res://data/monster_forms/pombomb.tres", "res://data/monster_forms/spitzfyre.tres", "res://data/battle_moves/Nyoomies_Boondoggle.tres", "res://data/battle_moves/Nyoomies_Dogged.tres", "res://data/battle_moves/Nyoomies_Fakeout.tres", "res://data/attack_vfx/nyoomies_fakeout.tres", "res://data/attack_vfx/nyoomies_jam.tres", "res://data/attack_vfx/nyoomies_slam.tres", "res://data/monster_forms/kuneko.tres", "res://data/monster_forms/shining_kuneko.tres", "res://data/monster_forms/decibelle.tres", "res://data/monster_forms/cat-5.tres" ]
+modified_dirs = [  ]

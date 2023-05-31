@@ -1,0 +1,76 @@
+[gd_resource type="Resource" load_steps=20 format=2]
+
+[ext_resource path="res://data/MonsterForm.gd" type="Script" id=1]
+[ext_resource path="res://sfx/cries/decibelle_cry.wav" type="AudioStream" id=2]
+[ext_resource path="res://data/elemental_types/air.tres" type="Resource" id=3]
+[ext_resource path="res://data/battle_moves/new_leaf.tres" type="Resource" id=5]
+[ext_resource path="res://data/battle_moves/spit.tres" type="Resource" id=6]
+[ext_resource path="res://data/battle_moves/dodge.tres" type="Resource" id=7]
+[ext_resource path="res://data/battle_moves/sonic_boom.tres" type="Resource" id=8]
+[ext_resource path="res://data/battle_moves/taunt.tres" type="Resource" id=9]
+[ext_resource path="res://data/battle_moves/air_wall.tres" type="Resource" id=10]
+[ext_resource path="res://data/tape_upgrade_scripts/TapeUpgradeMove.gd" type="Script" id=11]
+[ext_resource path="res://data/battle_moves/provoke.tres" type="Resource" id=12]
+[ext_resource path="res://data/battle_moves/echolocation.tres" type="Resource" id=13]
+[ext_resource path="res://data/battle_moves/hurricane.tres" type="Resource" id=14]
+[ext_resource path="res://data/battle_moves/metal_riff.tres" type="Resource" id=15]
+[ext_resource path="res://data/battle_moves/change_the_record.tres" type="Resource" id=16]
+[ext_resource path="res://data/battle_moves/call_for_help.tres" type="Resource" id=17]
+[ext_resource path="res://ui/monster_stickers/decibelle.png" type="Texture" id=18]
+[ext_resource path="res://data/battle_moves/nurse.tres" type="Resource" id=19]
+
+[sub_resource type="Resource" id=1]
+resource_name = "change_the_record"
+script = ExtResource( 11 )
+add_slot = false
+sticker = ExtResource( 16 )
+
+[resource]
+script = ExtResource( 1 )
+name = "DECIBELLE_NAME"
+swap_colors = [ Color( 0.223529, 0.235294, 0.298039, 1 ), Color( 0.384314, 0.423529, 0.517647, 1 ), Color( 0.615686, 0.67451, 0.764706, 1 ), Color( 0.807843, 0.882353, 0.933333, 1 ), Color( 0.92549, 0.960784, 0.972549, 1 ), Color( 0.121569, 0.0784314, 0.262745, 1 ), Color( 0.2, 0.156863, 0.462745, 1 ), Color( 0.27451, 0.282353, 0.807843, 1 ), Color( 0.376471, 0.478431, 0.921569, 1 ), Color( 0.458824, 0.686275, 0.980392, 1 ), Color( 0.121569, 0.0784314, 0.262745, 1 ), Color( 0.219608, 0.137255, 0.462745, 1 ), Color( 0.462745, 0.160784, 0.858824, 1 ), Color( 0.713726, 0.329412, 0.94902, 1 ), Color( 0.815686, 0.529412, 0.972549, 1 ) ]
+default_palette = [  ]
+emission_palette = [  ]
+battle_cry = ExtResource( 2 )
+named_positions = {
+"attack": Vector2( 131, 53 ),
+"decoy": Vector2( 128, 117 ),
+"eye": Vector2( 94, 45 ),
+"hit": Vector2( 95, 63 )
+}
+elemental_types = [ ExtResource( 3 ) ]
+tape_sticker_texture = ExtResource( 18 )
+exp_yield = 40
+require_dlc = ""
+battle_sprite_path = "res://sprites/monsters/decibelle.json"
+ui_sprite_path = ""
+pronouns = 0
+description = "DECIBELLE_DESCRIPTION"
+max_hp = 135
+melee_attack = 100
+melee_defense = 110
+ranged_attack = 170
+ranged_defense = 160
+speed = 125
+accuracy = 100
+evasion = 100
+max_ap = 10
+move_slots = 8
+evolutions = [  ]
+evolution_specialization_question = ""
+capture_rate = 3
+exp_gradient = 21
+exp_base_level = 21
+move_tags = [ "sirenade", "sound", "bird", "annoy", "toy", "glitter", "fast", "flight", "charity", "cute", "healer", "cooking", "weather" ]
+initial_moves = [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 5 ), ExtResource( 12 ) ]
+tape_upgrades = [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), SubResource( 1 ), ExtResource( 19 ) ]
+unlock_ability = ""
+fusion_name_prefix = "DECIBELLE_NAME_PREFIX"
+fusion_name_suffix = "DECIBELLE_NAME_SUFFIX"
+fusion_generator_path = "res://data/fusions/decibelle.tscn"
+bestiary_index = 25
+bestiary_category = 0
+bestiary_bios = [ "DECIBELLE_LORE_1", "DECIBELLE_LORE_2" ]
+bestiary_data_requirement = 0
+bestiary_data_requirement_flag = ""
+loot_table = ""

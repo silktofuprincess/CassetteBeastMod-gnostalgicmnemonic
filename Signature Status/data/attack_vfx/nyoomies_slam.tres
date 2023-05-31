@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://data/battle_vfx_scripts/SceneVfx.gd" type="Script" id=1]
+[ext_resource path="res://sprites/vfx/particles/morgante_attack_orange.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sfx/attacks/morgante_attack.wav" type="AudioStream" id=3]
+
+[resource]
+script = ExtResource( 1 )
+initial_delay = 0.0
+sound = ExtResource( 3 )
+sound_pitch_scale = 1.0
+sound_random_pitch = 1.1
+background_lighting = 0.3
+background_lighting_ease_duration = 0.1
+origin_anchor_name = "attack"
+target_anchor_name = "hit"
+origin_anchor_on_ground = false
+target_anchor_on_ground = false
+scene = ExtResource( 2 )
+enable_flip = true
+duration = 0.5
+offset = Vector3( 0, 0, 0 )
+spawn_at_target = false

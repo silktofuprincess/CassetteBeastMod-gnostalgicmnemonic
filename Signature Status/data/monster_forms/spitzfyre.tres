@@ -1,0 +1,88 @@
+[gd_resource type="Resource" load_steps=22 format=2]
+
+[ext_resource path="res://data/MonsterForm.gd" type="Script" id=1]
+[ext_resource path="res://data/elemental_types/fire.tres" type="Resource" id=2]
+[ext_resource path="res://ui/monster_stickers/spitzfyre.png" type="Texture" id=3]
+[ext_resource path="res://data/battle_moves/inflame.tres" type="Resource" id=6]
+[ext_resource path="res://data/battle_moves/elemental_wall.tres" type="Resource" id=7]
+[ext_resource path="res://data/battle_moves/zoomies.tres" type="Resource" id=8]
+[ext_resource path="res://data/battle_moves/be_random.tres" type="Resource" id=9]
+[ext_resource path="res://data/battle_moves/spit.tres" type="Resource" id=10]
+[ext_resource path="res://data/battle_moves/dog_years.tres" type="Resource" id=11]
+[ext_resource path="res://data/battle_moves/sure_fire.tres" type="Resource" id=12]
+[ext_resource path="res://data/battle_moves/hot_potato.tres" type="Resource" id=13]
+[ext_resource path="res://data/battle_moves/glitter_bomb.tres" type="Resource" id=14]
+[ext_resource path="res://data/battle_moves/sonic_boom.tres" type="Resource" id=15]
+[ext_resource path="res://data/tape_upgrade_scripts/TapeUpgradeMove.gd" type="Script" id=16]
+[ext_resource path="res://data/battle_moves/air_wall.tres" type="Resource" id=17]
+[ext_resource path="res://sfx/cries/spitzfyre_cry.wav" type="AudioStream" id=18]
+[ext_resource path="res://data/battle_moves/rapid_fire.tres" type="Resource" id=19]
+[ext_resource path="res://data/battle_moves/sticky_tongue.tres" type="Resource" id=20]
+
+[sub_resource type="Resource" id=1]
+resource_name = "sure_fire"
+script = ExtResource( 16 )
+add_slot = false
+sticker = ExtResource( 12 )
+
+[sub_resource type="Resource" id=2]
+resource_name = "glitter_bomb"
+script = ExtResource( 16 )
+add_slot = false
+sticker = ExtResource( 14 )
+
+[sub_resource type="Resource" id=3]
+resource_name = "sonic_boom"
+script = ExtResource( 16 )
+add_slot = false
+sticker = ExtResource( 15 )
+
+[resource]
+script = ExtResource( 1 )
+name = "SPITZFYRE_NAME"
+swap_colors = [ Color( 0.0901961, 0.0901961, 0.207843, 1 ), Color( 0.152941, 0.160784, 0.309804, 1 ), Color( 0.215686, 0.247059, 0.403922, 1 ), Color( 0.341176, 0.384314, 0.556863, 1 ), Color( 0.513726, 0.564706, 0.72549, 1 ), Color( 0.470588, 0.14902, 0.14902, 1 ), Color( 0.611765, 0.290196, 0.207843, 1 ), Color( 0.85098, 0.541176, 0.188235, 1 ), Color( 0.945098, 0.760784, 0.333333, 1 ), Color( 0.972549, 0.901961, 0.545098, 1 ), Color( 0.207843, 0.133333, 0.164706, 1 ), Color( 0.278431, 0.164706, 0.207843, 1 ), Color( 0.435294, 0.223529, 0.270588, 1 ), Color( 0.576471, 0.32549, 0.32549, 1 ), Color( 0.74902, 0.505882, 0.470588, 1 ) ]
+default_palette = [  ]
+emission_palette = [  ]
+battle_cry = ExtResource( 18 )
+named_positions = {
+"attack": Vector2( 59, 20 ),
+"decoy": Vector2( 72, 50 ),
+"eye": Vector2( 52, 16 ),
+"hit": Vector2( 54, 23 )
+}
+elemental_types = [ ExtResource( 2 ) ]
+tape_sticker_texture = ExtResource( 3 )
+exp_yield = 40
+require_dlc = ""
+battle_sprite_path = "res://sprites/monsters/spitzfyre.json"
+ui_sprite_path = ""
+pronouns = 0
+description = "SPITZFYRE_DESCRIPTION"
+max_hp = 120
+melee_attack = 100
+melee_defense = 100
+ranged_attack = 160
+ranged_defense = 140
+speed = 140
+accuracy = 100
+evasion = 100
+max_ap = 10
+move_slots = 8
+evolutions = [  ]
+evolution_specialization_question = ""
+capture_rate = 15
+exp_gradient = 21
+exp_base_level = 21
+move_tags = [ "pombomb", "dog", "cute", "pet", "animal", "annoy", "bone", "bomb", "flight", "tongue" ]
+initial_moves = [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 20 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 9 ) ]
+tape_upgrades = [ SubResource( 1 ), ExtResource( 19 ), SubResource( 2 ), ExtResource( 17 ), SubResource( 3 ) ]
+unlock_ability = ""
+fusion_name_prefix = "SPITZFYRE_NAME_PREFIX"
+fusion_name_suffix = "SPITZFYRE_NAME_SUFFIX"
+fusion_generator_path = "res://data/fusions/spitzfyre.tscn"
+bestiary_index = 105
+bestiary_category = 0
+bestiary_bios = [ "SPITZFYRE_LORE_1", "SPITZFYRE_LORE_2" ]
+bestiary_data_requirement = 0
+bestiary_data_requirement_flag = ""
+loot_table = ""

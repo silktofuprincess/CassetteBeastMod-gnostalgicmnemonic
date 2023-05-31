@@ -1,0 +1,70 @@
+[gd_resource type="Resource" load_steps=18 format=2]
+
+[ext_resource path="res://data/MonsterForm.gd" type="Script" id=1]
+[ext_resource path="res://data/battle_moves/smack.tres" type="Resource" id=2]
+[ext_resource path="res://data/elemental_types/astral.tres" type="Resource" id=4]
+[ext_resource path="res://data/battle_moves/bad_joke.tres" type="Resource" id=5]
+[ext_resource path="res://data/battle_moves/double_slice.tres" type="Resource" id=6]
+[ext_resource path="res://data/battle_moves/sharp_edges.tres" type="Resource" id=7]
+[ext_resource path="res://data/battle_moves/cosmic_kunai.tres" type="Resource" id=8]
+[ext_resource path="res://data/battle_moves/air_wall.tres" type="Resource" id=9]
+[ext_resource path="res://data/battle_moves/wink.tres" type="Resource" id=10]
+[ext_resource path="res://data/battle_moves/ritual.tres" type="Resource" id=12]
+[ext_resource path="res://data/battle_moves/be_random.tres" type="Resource" id=13]
+[ext_resource path="res://data/battle_moves/galactic_beatdown.tres" type="Resource" id=14]
+[ext_resource path="res://data/battle_moves/shooting_star.tres" type="Resource" id=15]
+[ext_resource path="res://data/battle_moves/broadcast.tres" type="Resource" id=16]
+[ext_resource path="res://ui/monster_stickers/shining_kuneko.png" type="Texture" id=17]
+[ext_resource path="res://sfx/cries/shining_kuneko_cry.wav" type="AudioStream" id=18]
+[ext_resource path="res://sfx/voices/kuneko/kuneko_defeat.wav" type="AudioStream" id=19]
+
+[resource]
+script = ExtResource( 1 )
+name = "SHINING_KUNEKO_NAME"
+swap_colors = [ Color( 0.223529, 0.235294, 0.298039, 1 ), Color( 0.384314, 0.423529, 0.517647, 1 ), Color( 0.615686, 0.67451, 0.764706, 1 ), Color( 0.807843, 0.882353, 0.933333, 1 ), Color( 0.92549, 0.960784, 0.972549, 1 ), Color( 0.219608, 0.137255, 0.462745, 1 ), Color( 0.462745, 0.160784, 0.858824, 1 ), Color( 0.713726, 0.329412, 0.94902, 1 ), Color( 0.815686, 0.529412, 0.972549, 1 ), Color( 0.890196, 0.686275, 0.996078, 1 ), Color( 0.470588, 0.14902, 0.14902, 1 ), Color( 0.611765, 0.290196, 0.207843, 1 ), Color( 0.85098, 0.541176, 0.188235, 1 ), Color( 0.945098, 0.760784, 0.333333, 1 ), Color( 0.972549, 0.901961, 0.545098, 1 ) ]
+default_palette = [  ]
+emission_palette = [ Color( 0.454902, 0.282353, 0.898039, 1 ), Color( 0.701961, 0.466667, 0.972549, 1 ), Color( 0.890196, 0.686275, 0.996078, 1 ), Color( 1, 1, 1, 1 ) ]
+battle_cry = ExtResource( 18 )
+defeat_cry = ExtResource( 19 )
+named_positions = {
+"attack": Vector2( 112, 36 ),
+"decoy": Vector2( 80, 82 ),
+"eye": Vector2( 60, 32 ),
+"hit": Vector2( 59, 43 )
+}
+elemental_types = [ ExtResource( 4 ) ]
+tape_sticker_texture = ExtResource( 17 )
+exp_yield = 40
+require_dlc = ""
+battle_sprite_path = "res://sprites/monsters/shining_kuneko.json"
+ui_sprite_path = ""
+pronouns = 1
+description = "SHINING_KUNEKO_DESCRIPTION"
+max_hp = 140
+melee_attack = 140
+melee_defense = 140
+ranged_attack = 140
+ranged_defense = 140
+speed = 140
+accuracy = 100
+evasion = 100
+max_ap = 10
+move_slots = 8
+evolutions = [  ]
+evolution_specialization_question = ""
+capture_rate = 3
+exp_gradient = 21
+exp_base_level = 21
+move_tags = [ "kuneko", "cat", "animal", "cute", "fast", "deception", "psychic", "annoy", "knife", "run", "teeth", "hands", "air", "spirit", "healer", "righteous" ]
+initial_moves = [ ExtResource( 2 ), ExtResource( 10 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 13 ) ]
+tape_upgrades = [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ), ExtResource( 8 ) ]
+unlock_ability = ""
+fusion_name_prefix = "SHINING_KUNEKO_NAME_PREFIX"
+fusion_name_suffix = "SHINING_KUNEKO_NAME_SUFFIX"
+fusion_generator_path = "res://data/fusions/shining_kuneko.tscn"
+bestiary_index = 111
+bestiary_category = 0
+bestiary_bios = [ "SHINING_KUNEKO_LORE_1", "SHINING_KUNEKO_LORE_2" ]
+bestiary_data_requirement = 0
+bestiary_data_requirement_flag = ""
+loot_table = ""

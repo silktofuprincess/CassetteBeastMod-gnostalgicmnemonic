@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://data/battle_vfx_scripts/ParallelVfx.gd" type="Script" id=1]
+[ext_resource path="res://data/attack_vfx/traffic_light_cone.tres" type="Resource" id=2]
+[ext_resource path="res://data/attack_vfx/traffic_jam_light.tres" type="Resource" id=3]
+[ext_resource path="res://sfx/attacks/traffic_jam.wav" type="AudioStream" id=4]
+
+[resource]
+script = ExtResource( 1 )
+initial_delay = 0.0
+sound = ExtResource( 4 )
+sound_pitch_scale = 1.0
+sound_random_pitch = 1.1
+background_lighting = 0.3
+background_lighting_ease_duration = 0.3
+origin_anchor_name = "attack"
+target_anchor_name = "hit"
+origin_anchor_on_ground = true
+target_anchor_on_ground = false
+play_form_sound = ""
+vfx = [ ExtResource( 3 ), ExtResource( 2 ) ]

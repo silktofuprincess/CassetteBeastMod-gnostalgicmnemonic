@@ -1,0 +1,97 @@
+[gd_resource type="Resource" load_steps=20 format=2]
+
+[ext_resource path="res://data/MonsterForm.gd" type="Script" id=1]
+[ext_resource path="res://data/elemental_types/air.tres" type="Resource" id=3]
+[ext_resource path="res://data/Evolution.gd" type="Script" id=4]
+[ext_resource path="res://data/battle_moves/smack.tres" type="Resource" id=5]
+[ext_resource path="res://data/monster_forms/shining_kuneko.tres" type="Resource" id=6]
+[ext_resource path="res://data/battle_moves/elemental_wall.tres" type="Resource" id=8]
+[ext_resource path="res://data/battle_moves/bad_joke.tres" type="Resource" id=9]
+[ext_resource path="res://data/battle_moves/double_slice.tres" type="Resource" id=10]
+[ext_resource path="res://data/tape_upgrade_scripts/TapeUpgradeMove.gd" type="Script" id=11]
+[ext_resource path="res://data/battle_moves/sharp_edges.tres" type="Resource" id=12]
+[ext_resource path="res://data/battle_moves/wink.tres" type="Resource" id=13]
+[ext_resource path="res://data/battle_moves/be_random.tres" type="Resource" id=14]
+[ext_resource path="res://ui/monster_stickers/kuneko.png" type="Texture" id=15]
+[ext_resource path="res://sfx/cries/kuneko_cry.wav" type="AudioStream" id=16]
+[ext_resource path="res://sfx/voices/kuneko/kuneko_defeat.wav" type="AudioStream" id=17]
+
+[sub_resource type="Resource" id=1]
+resource_name = "shining_kuneko"
+script = ExtResource( 4 )
+evolved_form = ExtResource( 6 )
+required_tape_grade = 5
+min_hour = 0.0
+max_hour = 24.0
+required_location = ""
+specialization = ""
+is_secret = false
+
+[sub_resource type="Resource" id=2]
+resource_name = "Slot + double_slice"
+script = ExtResource( 11 )
+add_slot = true
+sticker = ExtResource( 10 )
+
+[sub_resource type="Resource" id=3]
+resource_name = "Slot + sharp_edges"
+script = ExtResource( 11 )
+add_slot = true
+sticker = ExtResource( 12 )
+
+[sub_resource type="Resource" id=4]
+resource_name = "Slot + bad_joke"
+script = ExtResource( 11 )
+add_slot = true
+sticker = ExtResource( 9 )
+
+[resource]
+script = ExtResource( 1 )
+name = "KUNEKO_NAME"
+swap_colors = [ Color( 0.223529, 0.235294, 0.298039, 1 ), Color( 0.384314, 0.423529, 0.517647, 1 ), Color( 0.615686, 0.67451, 0.764706, 1 ), Color( 0.807843, 0.882353, 0.933333, 1 ), Color( 0.92549, 0.960784, 0.972549, 1 ), Color( 0.219608, 0.137255, 0.462745, 1 ), Color( 0.462745, 0.160784, 0.858824, 1 ), Color( 0.713726, 0.329412, 0.94902, 1 ), Color( 0.815686, 0.529412, 0.972549, 1 ), Color( 0.890196, 0.686275, 0.996078, 1 ), Color( 0.0901961, 0.0901961, 0.207843, 1 ), Color( 0.152941, 0.160784, 0.309804, 1 ), Color( 0.215686, 0.247059, 0.403922, 1 ), Color( 0.341176, 0.384314, 0.556863, 1 ), Color( 0.513726, 0.564706, 0.72549, 1 ) ]
+default_palette = [  ]
+emission_palette = [  ]
+battle_cry = ExtResource( 16 )
+defeat_cry = ExtResource( 17 )
+named_positions = {
+"attack": Vector2( 97, 32 ),
+"decoy": Vector2( 79, 79 ),
+"eye": Vector2( 51, 55 ),
+"hit": Vector2( 50, 59 )
+}
+elemental_types = [ ExtResource( 3 ) ]
+tape_sticker_texture = ExtResource( 15 )
+exp_yield = 40
+require_dlc = ""
+battle_sprite_path = "res://sprites/monsters/kuneko.json"
+ui_sprite_path = ""
+pronouns = 1
+description = "KUNEKO_DESCRIPTION"
+max_hp = 125
+melee_attack = 125
+melee_defense = 125
+ranged_attack = 125
+ranged_defense = 125
+speed = 125
+accuracy = 100
+evasion = 100
+max_ap = 10
+move_slots = 5
+evolutions = [ SubResource( 1 ) ]
+evolution_specialization_question = ""
+capture_rate = 3
+exp_gradient = 21
+exp_base_level = 0
+move_tags = [ "kuneko", "cat", "animal", "cute", "fast", "deception", "psychic", "annoy", "knife", "run", "teeth", "hands", "spirit", "healer", "righteous" ]
+initial_moves = [ ExtResource( 5 ), ExtResource( 13 ) ]
+tape_upgrades = [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), ExtResource( 8 ), ExtResource( 14 ) ]
+unlock_ability = ""
+fusion_name_prefix = "KUNEKO_NAME_PREFIX"
+fusion_name_suffix = "KUNEKO_NAME_SUFFIX"
+fusion_generator_path = "res://data/fusions/kuneko.tscn"
+bestiary_index = 110
+bestiary_category = 0
+bestiary_bios = [ "KUNEKO_LORE_1", "KUNEKO_LORE_2" ]
+bestiary_data_requirement = 0
+bestiary_data_requirement_flag = ""
+loot_table = ""
