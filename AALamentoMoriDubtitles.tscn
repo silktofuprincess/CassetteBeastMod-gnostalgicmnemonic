@@ -1,0 +1,173 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://data/battle_moves/hp_absorb.tres" type="Resource" id=1]
+[ext_resource path="res://world/npc/NPC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://nodes/encounter_config/EncounterConfig.gd" type="Script" id=3]
+[ext_resource path="res://nodes/encounter_config/CharacterConfig.gd" type="Script" id=4]
+[ext_resource path="res://data/characters/aa_lamento_mori.tres" type="Resource" id=5]
+[ext_resource path="res://nodes/encounter_config/TapeConfig.gd" type="Script" id=6]
+[ext_resource path="res://data/loot_tables/battle_archangel.tres" type="Resource" id=7]
+[ext_resource path="res://battle/ai/archangels/LamentoMoriAI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://data/battle_moves/bone_cannon.tres" type="Resource" id=9]
+[ext_resource path="res://data/battle_moves/phase_shift.tres" type="Resource" id=10]
+[ext_resource path="res://data/battle_moves/beast_wall.tres" type="Resource" id=11]
+[ext_resource path="res://sprites/archangels/skeleton/Skeleton3DWorld.tscn" type="PackedScene" id=12]
+[ext_resource path="res://data/archangel_forms/lamento_mori.tres" type="Resource" id=13]
+[ext_resource path="res://battle/backgrounds/archangel/BattleStationPlatformLamentoMori.tscn" type="PackedScene" id=15]
+[ext_resource path="res://data/archangel_moves/lamento_mori_death_ray.tres" type="Resource" id=16]
+[ext_resource path="res://cutscenes/archangels/Archangel_BattleEnd.tscn" type="PackedScene" id=17]
+[ext_resource path="res://data/battle_moves/ritual.tres" type="Resource" id=18]
+[ext_resource path="res://sfx/cries/aa_lamento_mori_cry.wav" type="AudioStream" id=19]
+[ext_resource path="res://menus/boss_title/TitleBannerConfig.gd" type="Script" id=20]
+[ext_resource path="res://menus/boss_title/ArchangelTitleBanner.tscn" type="PackedScene" id=21]
+[ext_resource path="res://data/archangel_moves/eldritch.tres" type="Resource" id=22]
+[ext_resource path="res://data/battle_moves/status_resistance.tres" type="Resource" id=23]
+[ext_resource path="res://data/battle_moves/neutralise.tres" type="Resource" id=24]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 20 )
+banner_scene = ExtResource( 21 )
+title = "AA_LAMENTO_MORI_NAME"
+subtitle = "AA_LAMENTO_MORI_DUBTITLE"
+tutorial = ""
+
+[node name="AALamentoMori" instance=ExtResource( 2 )]
+
+[node name="Sprite" parent="." index="2"]
+idle = "idle_world"
+flip_h = true
+albedo = Color( 1, 1, 1, 1 )
+emission = Color( 0, 0, 0, 1 )
+wave_amplitude = 0.0
+wave_t_frequency = 5.0
+wave_v_frequency = 0.0
+static_amount = 0.0
+static_offset = 0.0
+static_speed = 0.0
+sparkle = false
+
+[node name="Skeleton3D" parent="Sprite" index="0" instance=ExtResource( 12 )]
+
+[node name="Interaction" parent="." index="4"]
+display_marker = false
+
+[node name="EncounterConfig" type="Node" parent="." index="8"]
+script = ExtResource( 3 )
+unique_id = "aa_lamento_mori"
+background_override = ExtResource( 15 )
+can_flee = false
+stamina_increase_on_win = 0.5
+loot_table_override = ExtResource( 7 )
+cutscenes = [ ExtResource( 17 ) ]
+transition = 3
+title_banner = SubResource( 1 )
+
+[node name="CharacterConfig" type="Node" parent="EncounterConfig" index="0"]
+script = ExtResource( 4 )
+character_name = "AA_LAMENTO_MORI_NAME"
+pronouns = 0
+exp_yield = 200
+base_character = ExtResource( 5 )
+character_kind = 2
+human_colors = {
+"body_color_1": -1,
+"body_color_2": -1,
+"eye_color": -1,
+"face_accessory_color": -1,
+"favorite_color": -1,
+"hair_accessory_color": -1,
+"hair_color": -1,
+"legs_color": -1,
+"shoe_color": -1,
+"skin_color": -1
+}
+human_part_names = {
+"arms": "",
+"body": "",
+"hair": "",
+"head": "",
+"legs": ""
+}
+ai = ExtResource( 8 )
+human_part_names/body = ""
+human_part_names/hair = ""
+human_part_names/head = ""
+human_part_names/legs = ""
+human_colors/body_color_1 = -1
+human_colors/body_color_2 = -1
+human_colors/eye_color = -1
+human_colors/face_accessory_color = -1
+human_colors/favorite_color = -1
+human_colors/hair_accessory_color = -1
+human_colors/hair_color = -1
+human_colors/legs_color = -1
+human_colors/shoe_color = -1
+human_colors/skin_color = -1
+
+[node name="TapeConfig" type="Node" parent="EncounterConfig/CharacterConfig" index="0"]
+script = ExtResource( 6 )
+form = ExtResource( 13 )
+moves_override = [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 10 ) ]
+
+[node name="RematchConfig" type="Node" parent="." index="9"]
+script = ExtResource( 3 )
+unique_id = "aa_lamento_mori_rematch"
+background_override = ExtResource( 15 )
+can_flee = false
+loot_table_override = ExtResource( 7 )
+transition = 3
+title_banner = SubResource( 1 )
+
+[node name="CharacterConfig" type="Node" parent="RematchConfig" index="0"]
+script = ExtResource( 4 )
+character_name = "AA_LAMENTO_MORI_NAME"
+pronouns = 0
+level_override = 100
+levels_per_defeat = 5
+exp_yield = 200
+base_character = ExtResource( 5 )
+character_kind = 2
+human_colors = {
+"body_color_1": -1,
+"body_color_2": -1,
+"eye_color": -1,
+"face_accessory_color": -1,
+"favorite_color": -1,
+"hair_accessory_color": -1,
+"hair_color": -1,
+"legs_color": -1,
+"shoe_color": -1,
+"skin_color": -1
+}
+human_part_names = {
+"arms": "",
+"body": "",
+"hair": "",
+"head": "",
+"legs": ""
+}
+ai = ExtResource( 8 )
+human_part_names/body = ""
+human_part_names/hair = ""
+human_part_names/head = ""
+human_part_names/legs = ""
+human_colors/body_color_1 = -1
+human_colors/body_color_2 = -1
+human_colors/eye_color = -1
+human_colors/face_accessory_color = -1
+human_colors/favorite_color = -1
+human_colors/hair_accessory_color = -1
+human_colors/hair_color = -1
+human_colors/legs_color = -1
+human_colors/shoe_color = -1
+human_colors/skin_color = -1
+
+[node name="TapeConfig" type="Node" parent="RematchConfig/CharacterConfig" index="0"]
+script = ExtResource( 6 )
+form = ExtResource( 13 )
+moves_override = [ ExtResource( 9 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 10 ) ]
+
+[node name="CryPlayer" type="AudioStreamPlayer" parent="." index="10"]
+pause_mode = 2
+stream = ExtResource( 19 )
+bus = "World"
