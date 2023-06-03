@@ -1,0 +1,50 @@
+[gd_resource type="Resource" load_steps=11 format=2]
+
+[ext_resource path="res://data/monster_forms/traffikrab.tres" type="Resource" id=1]
+[ext_resource path="res://data/spawn_config_scripts/MonsterSpawnProfile.gd" type="Script" id=2]
+[ext_resource path="res://data/monster_forms/burnace.tres" type="Resource" id=3]
+[ext_resource path="res://world/monsters/Traffikrab.tscn" type="PackedScene" id=4]
+[ext_resource path="res://data/monster_forms/undyin.tres" type="Resource" id=5]
+[ext_resource path="res://data/monster_forms/fountess.tres" type="Resource" id=6]
+[ext_resource path="res://world/monsters/Faucetear.tscn" type="PackedScene" id=7]
+[ext_resource path="res://data/map_metadata/overworld_chunk_metadata/overworld_-6_-6.tres" type="Resource" id=8]
+[ext_resource path="res://data/monster_forms/smogmagog.tres" type="Resource" id=9]
+[ext_resource path="res://data/monster_forms/palangolin.tres" type="Resource" id=10]
+
+[resource]
+script = ExtResource( 2 )
+spawn_configs = [  ]
+habitat_name = "REGION_NAME_DUNGEON_SHIPWRECK"
+habitat_require_flag = "visited_shipwreck"
+habitat_overworld_chunks = [ ExtResource( 8 ) ]
+habitat_endless = true
+min_team_size = 1
+max_team_size = 2
+disable_fleeing = false
+num_species = 6
+species_0/monster_form = ExtResource( 1 )
+species_0/world_monster = ExtResource( 4 )
+species_0/weight = 1.0
+species_0/hour_min = 0.0
+species_0/hour_max = 24.0
+species_1/monster_form = ExtResource( 3 )
+species_1/weight = 1.2
+species_1/hour_min = 0.0
+species_1/hour_max = 24.0
+species_2/monster_form = ExtResource( 5 )
+species_2/weight = 0.8
+species_2/hour_min = 0.0
+species_2/hour_max = 24.0
+species_3/monster_form = ExtResource( 6 )
+species_3/world_monster = ExtResource( 7 )
+species_3/weight = 1.0
+species_3/hour_min = 0.0
+species_3/hour_max = 24.0
+species_4/monster_form = ExtResource( 10 )
+species_4/weight = 0.25
+species_4/hour_min = 0.0
+species_4/hour_max = 24.0
+species_5/monster_form = ExtResource( 9 )
+species_5/weight = 0.25
+species_5/hour_min = 0.0
+species_5/hour_max = 24.0

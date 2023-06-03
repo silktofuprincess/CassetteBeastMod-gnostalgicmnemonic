@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://data/ContentInfo.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+id = "Improved_Companion_Quest_Zones"
+name = "Improved Companion Quest Zones"
+version_code = 1
+version_string = ".5"
+author = "gnostalgicMnemonic"
+save_file_format_tag = ""
+save_file_format_tag_version = 0
+network_protocol_tag = ""
+modified_files = [ "res://data/monster_spawn_profiles/dungeon_shipwreck.tres", "res://data/monster_spawn_profiles/mall.tres", "res://world/maps/landkeeper_offices/OfficeInterior1.tscn", "res://world/maps/landkeeper_offices/OfficeInterior2.tscn", "res://world/maps/landkeeper_offices/OfficeInterior3.tscn", "res://world/maps/landkeeper_offices/OfficeInterior4.tscn", "res://world/maps/landkeeper_offices/OfficeInterior5.tscn" ]
+modified_dirs = [  ]

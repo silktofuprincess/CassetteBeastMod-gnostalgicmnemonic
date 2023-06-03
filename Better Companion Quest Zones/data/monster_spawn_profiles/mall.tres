@@ -1,0 +1,72 @@
+[gd_resource type="Resource" load_steps=16 format=2]
+
+[ext_resource path="res://data/spawn_config_scripts/GhostSpawnProfile.gd" type="Script" id=1]
+[ext_resource path="res://data/map_metadata/overworld_chunk_metadata/overworld_3_-7.tres" type="Resource" id=2]
+[ext_resource path="res://data/monster_forms/dominoth.tres" type="Resource" id=3]
+[ext_resource path="res://data/monster_forms/binvader.tres" type="Resource" id=4]
+[ext_resource path="res://world/monsters/Dominoth.tscn" type="PackedScene" id=5]
+[ext_resource path="res://data/monster_forms/muskrateer.tres" type="Resource" id=6]
+[ext_resource path="res://data/monster_forms/mothmanic.tres" type="Resource" id=7]
+[ext_resource path="res://data/monster_forms/ratcousel.tres" type="Resource" id=8]
+[ext_resource path="res://data/monster_forms/mascotoy.tres" type="Resource" id=9]
+[ext_resource path="res://data/monster_forms/wingloom.tres" type="Resource" id=10]
+[ext_resource path="res://world/monsters/Mascotoy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://world/monsters/Ghost.tscn" type="PackedScene" id=12]
+[ext_resource path="res://data/monster_forms/faucetear.tres" type="Resource" id=13]
+[ext_resource path="res://world/monsters/Faucetear.tscn" type="PackedScene" id=14]
+[ext_resource path="res://data/monster_forms/arkidd.tres" type="Resource" id=15]
+
+[resource]
+script = ExtResource( 1 )
+spawn_configs = [  ]
+habitat_name = "REGION_NAME_MALL"
+habitat_require_flag = "visited_mall"
+habitat_overworld_chunks = [ ExtResource( 2 ) ]
+habitat_endless = true
+min_team_size = 1
+max_team_size = 2
+disable_fleeing = false
+ghost_world_monster = ExtResource( 12 )
+ghost_chance = 0.5
+num_species = 9
+species_0/monster_form = ExtResource( 3 )
+species_0/world_monster = ExtResource( 5 )
+species_0/weight = 0.3
+species_0/hour_min = 0.0
+species_0/hour_max = 24.0
+species_1/monster_form = ExtResource( 10 )
+species_1/world_monster = ExtResource( 5 )
+species_1/weight = 0.25
+species_1/hour_min = 0.0
+species_1/hour_max = 24.0
+species_2/monster_form = ExtResource( 7 )
+species_2/world_monster = ExtResource( 5 )
+species_2/weight = 0.25
+species_2/hour_min = 0.0
+species_2/hour_max = 24.0
+species_3/monster_form = ExtResource( 9 )
+species_3/world_monster = ExtResource( 11 )
+species_3/weight = 1.0
+species_3/hour_min = 0.0
+species_3/hour_max = 24.0
+species_4/monster_form = ExtResource( 4 )
+species_4/weight = 1.5
+species_4/hour_min = 0.0
+species_4/hour_max = 24.0
+species_5/monster_form = ExtResource( 6 )
+species_5/weight = 1.0
+species_5/hour_min = 0.0
+species_5/hour_max = 24.0
+species_6/monster_form = ExtResource( 8 )
+species_6/weight = 0.25
+species_6/hour_min = 0.0
+species_6/hour_max = 24.0
+species_7/monster_form = ExtResource( 13 )
+species_7/world_monster = ExtResource( 14 )
+species_7/weight = 1.0
+species_7/hour_min = 0.0
+species_7/hour_max = 24.0
+species_8/monster_form = ExtResource( 15 )
+species_8/weight = 0.28
+species_8/hour_min = 0.0
+species_8/hour_max = 24.0
