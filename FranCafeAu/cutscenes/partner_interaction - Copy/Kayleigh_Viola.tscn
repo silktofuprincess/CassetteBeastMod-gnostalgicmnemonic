@@ -1,0 +1,121 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://addons/misc_utils/actions/values/GetGroupNode.gd" type="Script" id=2]
+[ext_resource path="res://addons/misc_utils/actions/values/GetNode.gd" type="Script" id=3]
+[ext_resource path="res://nodes/actions/SetPositionAction.gd" type="Script" id=4]
+[ext_resource path="res://nodes/actions/ChangeTrackerTargetAction.gd" type="Script" id=5]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=6]
+[ext_resource path="res://sprites/portraits/kayleigh.png" type="Texture" id=7]
+[ext_resource path="res://sfx/voices/kayleigh/kayleigh_questioning.wav" type="AudioStream" id=8]
+[ext_resource path="res://sfx/voices/kayleigh/kayleigh_greeting.wav" type="AudioStream" id=9]
+[ext_resource path="res://sprites/portraits/viola_thinking.png" type="Texture" id=10]
+[ext_resource path="res://sprites/portraits/kayleigh_blushing.png" type="Texture" id=11]
+[ext_resource path="res://sfx/voices/viola/viola_thinking_2.wav" type="AudioStream" id=12]
+[ext_resource path="res://sprites/portraits/kayleigh_happy.png" type="Texture" id=13]
+[ext_resource path="res://sfx/voices/viola/viola_laugh_1.wav" type="AudioStream" id=14]
+[ext_resource path="res://addons/misc_utils/actions/WaitAction.gd" type="Script" id=15]
+[ext_resource path="res://nodes/actions/WaitForSceneChangeEndingAction.gd" type="Script" id=16]
+[ext_resource path="res://sprites/portraits/viola_happy.png" type="Texture" id=17]
+
+[node name="Kayleigh_Viola" type="Node"]
+script = ExtResource( 1 )
+one_time_flag = "partner_interaction_k_v"
+deny_partner_id = "kayleigh,viola"
+require_partner_unlocked = "kayleigh,viola"
+wait_for_animation = false
+
+[node name="WaitAction" type="Node" parent="."]
+script = ExtResource( 15 )
+base_seconds = 0.0
+
+[node name="SetPositionAction" type="Node" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetGroupNode" type="Node" parent="SetPositionAction"]
+script = ExtResource( 2 )
+group = "kayleigh"
+
+[node name="GetNode" type="Node" parent="SetPositionAction"]
+script = ExtResource( 3 )
+node_name = "CutscenePositions/Center1"
+
+[node name="SetPositionAction2" type="Node" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetGroupNode" type="Node" parent="SetPositionAction2"]
+script = ExtResource( 2 )
+group = "viola"
+
+[node name="GetNode" type="Node" parent="SetPositionAction2"]
+script = ExtResource( 3 )
+node_name = "CutscenePositions/Center2"
+
+[node name="WaitForSceneChangeEndingAction" type="Node" parent="."]
+script = ExtResource( 16 )
+
+[node name="WaitAction2" type="Node" parent="."]
+script = ExtResource( 15 )
+base_seconds = 0.5
+
+[node name="ChangeTrackerTargetAction" type="Node" parent="."]
+script = ExtResource( 5 )
+speed_multiplier = 2.0
+zoom = 1.5
+
+[node name="GetGroupNode" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+group = "kayleigh"
+
+[node name="GetGroupNode2" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+group = "viola"
+
+[node name="MessageDialogAction2" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 7 )
+title = "KAYLEIGH_NAME"
+messages = [ "PARTNER_INTERACT_K_V1_KAYLEIGH1" ]
+close_after = false
+
+[node name="MessageDialogAction3" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 7 )
+audio = ExtResource( 8 )
+title = "KAYLEIGH_NAME"
+messages = [ "PARTNER_INTERACT_K_V1_KAYLEIGH2" ]
+
+[node name="MessageDialogAction4" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 10 )
+portrait_position = 2
+audio = ExtResource( 12 )
+title = "VIOLA_NAME"
+messages = [ "PARTNER_INTERACT_K_V1_VIOLA3", "PARTNER_INTERACT_K_V1_VIOLA4", "PARTNER_INTERACT_K_V1_VIOLA5" ]
+
+[node name="MessageDialogAction5" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 11 )
+title = "KAYLEIGH_NAME"
+messages = [ "PARTNER_INTERACT_K_V1_KAYLEIGH6" ]
+
+[node name="MessageDialogAction6" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 17 )
+portrait_position = 2
+audio = ExtResource( 14 )
+title = "VIOLA_NAME"
+messages = [ "PARTNER_INTERACT_K_V1_VIOLA7" ]
+
+[node name="MessageDialogAction7" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 13 )
+audio = ExtResource( 9 )
+title = "KAYLEIGH_NAME"
+messages = [ "PARTNER_INTERACT_K_V1_KAYLEIGH8" ]

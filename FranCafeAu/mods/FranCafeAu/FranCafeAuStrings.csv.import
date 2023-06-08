@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://mods/FranCafeAu/FranCafeAuStrings.en.translation" ]
+
+source_file="res://mods/FranCafeAu/FranCafeAuStrings.csv"
+dest_files=[ "res://mods/FranCafeAu/FranCafeAuStrings.en.translation" ]
+
+[params]
+
+compress=false
+delimiter=0

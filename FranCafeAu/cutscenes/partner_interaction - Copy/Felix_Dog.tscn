@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://addons/misc_utils/actions/values/GetGroupNode.gd" type="Script" id=2]
+[ext_resource path="res://addons/misc_utils/actions/values/GetNode.gd" type="Script" id=3]
+[ext_resource path="res://nodes/actions/SetPositionAction.gd" type="Script" id=4]
+[ext_resource path="res://nodes/actions/ChangeTrackerTargetAction.gd" type="Script" id=5]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=6]
+[ext_resource path="res://sfx/voices/dog/dog_bark_1.wav" type="AudioStream" id=7]
+[ext_resource path="res://sprites/portraits/felix_happy.png" type="Texture" id=8]
+[ext_resource path="res://sprites/portraits/dog_happy.png" type="Texture" id=9]
+[ext_resource path="res://sfx/voices/felix/felix_laugh_1.wav" type="AudioStream" id=12]
+[ext_resource path="res://addons/misc_utils/actions/WaitAction.gd" type="Script" id=15]
+[ext_resource path="res://nodes/actions/WaitForSceneChangeEndingAction.gd" type="Script" id=16]
+
+[node name="Felix_Dog" type="Node"]
+script = ExtResource( 1 )
+one_time_flag = "partner_interaction_f_d"
+deny_partner_id = "felix,dog"
+require_partner_unlocked = "felix,dog"
+wait_for_animation = false
+
+[node name="WaitAction" type="Node" parent="."]
+script = ExtResource( 15 )
+base_seconds = 0.0
+
+[node name="SetPositionAction" type="Node" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetGroupNode" type="Node" parent="SetPositionAction"]
+script = ExtResource( 2 )
+group = "dog"
+
+[node name="GetNode" type="Node" parent="SetPositionAction"]
+script = ExtResource( 3 )
+node_name = "CutscenePositions/Center1"
+
+[node name="SetPositionAction2" type="Node" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetGroupNode" type="Node" parent="SetPositionAction2"]
+script = ExtResource( 2 )
+group = "felix"
+
+[node name="GetNode" type="Node" parent="SetPositionAction2"]
+script = ExtResource( 3 )
+node_name = "CutscenePositions/Center2"
+
+[node name="WaitForSceneChangeEndingAction" type="Node" parent="."]
+script = ExtResource( 16 )
+
+[node name="WaitAction2" type="Node" parent="."]
+script = ExtResource( 15 )
+base_seconds = 0.5
+
+[node name="ChangeTrackerTargetAction" type="Node" parent="."]
+script = ExtResource( 5 )
+speed_multiplier = 2.0
+zoom = 1.5
+
+[node name="GetGroupNode" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+group = "dog"
+
+[node name="GetGroupNode2" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+group = "felix"
+
+[node name="MessageDialogAction2" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 8 )
+portrait_position = 2
+audio = ExtResource( 12 )
+title = "FELIX_NAME"
+messages = [ "PARTNER_INTERACT_F_D1_FELIX1" ]
+
+[node name="MessageDialogAction" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 9 )
+audio = ExtResource( 7 )
+title = "DOG_NAME"
+messages = [ "PARTNER_INTERACT_F_D1_DOG2" ]

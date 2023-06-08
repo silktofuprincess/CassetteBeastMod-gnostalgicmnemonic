@@ -1,0 +1,54 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://addons/misc_utils/actions/composites/RandomBranch.gd" type="Script" id=1]
+[ext_resource path="res://cutscenes/partner_interaction/Kayleigh_Meredith.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cutscenes/partner_interaction/Kayleigh_Eugene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cutscenes/partner_interaction/Kayleigh_Felix.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cutscenes/partner_interaction/Kayleigh_Viola.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cutscenes/partner_interaction/Kayleigh_Dog.tscn" type="PackedScene" id=6]
+[ext_resource path="res://cutscenes/partner_interaction/Meredith_Eugene.tscn" type="PackedScene" id=7]
+[ext_resource path="res://cutscenes/partner_interaction/Meredith_Felix.tscn" type="PackedScene" id=8]
+[ext_resource path="res://cutscenes/partner_interaction/Meredith_Viola.tscn" type="PackedScene" id=9]
+[ext_resource path="res://cutscenes/partner_interaction/Meredith_Dog.tscn" type="PackedScene" id=10]
+[ext_resource path="res://cutscenes/partner_interaction/Eugene_Felix.tscn" type="PackedScene" id=11]
+[ext_resource path="res://cutscenes/partner_interaction/Eugene_Dog.tscn" type="PackedScene" id=12]
+[ext_resource path="res://cutscenes/partner_interaction/Eugene_Viola.tscn" type="PackedScene" id=13]
+[ext_resource path="res://cutscenes/partner_interaction/Felix_Viola.tscn" type="PackedScene" id=14]
+[ext_resource path="res://cutscenes/partner_interaction/Felix_Dog.tscn" type="PackedScene" id=15]
+[ext_resource path="res://cutscenes/partner_interaction/Viola_Dog.tscn" type="PackedScene" id=16]
+[ext_resource path="res://cutscenes/partner_interaction/CAUFE_Kayleigh_Meredith_1.tscn" type="PackedScene" id=17]
+
+[node name="RandomBranch" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Kayleigh_Meredith" parent="." instance=ExtResource( 2 )]
+
+[node name="Kayleigh_Eugene" parent="." instance=ExtResource( 3 )]
+
+[node name="Kayleigh_Felix" parent="." instance=ExtResource( 4 )]
+
+[node name="Kayleigh_Viola" parent="." instance=ExtResource( 5 )]
+
+[node name="Kayleigh_Dog" parent="." instance=ExtResource( 6 )]
+
+[node name="Meredith_Eugene" parent="." instance=ExtResource( 7 )]
+
+[node name="Meredith_Felix" parent="." instance=ExtResource( 8 )]
+
+[node name="Meredith_Viola" parent="." instance=ExtResource( 9 )]
+
+[node name="Meredith_Dog" parent="." instance=ExtResource( 10 )]
+
+[node name="Eugene_Felix" parent="." instance=ExtResource( 11 )]
+
+[node name="Eugene_Viola" parent="." instance=ExtResource( 13 )]
+
+[node name="Eugene_Dog" parent="." instance=ExtResource( 12 )]
+
+[node name="Felix_Viola" parent="." instance=ExtResource( 14 )]
+
+[node name="Felix_Dog" parent="." instance=ExtResource( 15 )]
+
+[node name="Viola_Dog" parent="." instance=ExtResource( 16 )]
+
+[node name="CAUFE_Kayleigh_Meredith_1" parent="." instance=ExtResource( 17 )]

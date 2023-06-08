@@ -1,0 +1,116 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://addons/misc_utils/actions/values/GetGroupNode.gd" type="Script" id=2]
+[ext_resource path="res://addons/misc_utils/actions/values/GetNode.gd" type="Script" id=3]
+[ext_resource path="res://nodes/actions/SetPositionAction.gd" type="Script" id=4]
+[ext_resource path="res://nodes/actions/ChangeTrackerTargetAction.gd" type="Script" id=5]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=6]
+[ext_resource path="res://sfx/voices/felix/felix_laugh_2.wav" type="AudioStream" id=7]
+[ext_resource path="res://sprites/portraits/felix.png" type="Texture" id=8]
+[ext_resource path="res://sfx/voices/eugene/eugene_motivated_2.wav" type="AudioStream" id=9]
+[ext_resource path="res://sfx/voices/eugene/eugene_questioning.wav" type="AudioStream" id=10]
+[ext_resource path="res://sprites/portraits/eugene_angry_smile.png" type="Texture" id=11]
+[ext_resource path="res://sprites/portraits/felix_thinking.png" type="Texture" id=12]
+[ext_resource path="res://sprites/portraits/eugene_thinking.png" type="Texture" id=13]
+[ext_resource path="res://sfx/voices/felix/felix_thinking_1.wav" type="AudioStream" id=14]
+[ext_resource path="res://addons/misc_utils/actions/WaitAction.gd" type="Script" id=15]
+[ext_resource path="res://nodes/actions/WaitForSceneChangeEndingAction.gd" type="Script" id=16]
+[ext_resource path="res://sfx/voices/eugene/eugene_thinking_1.wav" type="AudioStream" id=17]
+[ext_resource path="res://sprites/portraits/eugene_happy.png" type="Texture" id=18]
+
+[node name="Eugene_Felix" type="Node"]
+script = ExtResource( 1 )
+one_time_flag = "partner_interaction_e_f"
+deny_partner_id = "eugene,felix"
+require_partner_unlocked = "eugene,felix"
+wait_for_animation = false
+
+[node name="WaitAction" type="Node" parent="."]
+script = ExtResource( 15 )
+base_seconds = 0.0
+
+[node name="SetPositionAction" type="Node" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetGroupNode" type="Node" parent="SetPositionAction"]
+script = ExtResource( 2 )
+group = "eugene"
+
+[node name="GetNode" type="Node" parent="SetPositionAction"]
+script = ExtResource( 3 )
+node_name = "CutscenePositions/Center1"
+
+[node name="SetPositionAction2" type="Node" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetGroupNode" type="Node" parent="SetPositionAction2"]
+script = ExtResource( 2 )
+group = "felix"
+
+[node name="GetNode2" type="Node" parent="SetPositionAction2"]
+script = ExtResource( 3 )
+node_name = "CutscenePositions/Center2"
+
+[node name="WaitForSceneChangeEndingAction" type="Node" parent="."]
+script = ExtResource( 16 )
+
+[node name="WaitAction2" type="Node" parent="."]
+script = ExtResource( 15 )
+base_seconds = 0.5
+
+[node name="ChangeTrackerTargetAction" type="Node" parent="."]
+script = ExtResource( 5 )
+speed_multiplier = 2.0
+zoom = 1.5
+
+[node name="GetGroupNode" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+group = "eugene"
+
+[node name="GetGroupNode2" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+group = "felix"
+
+[node name="MessageDialogAction" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 13 )
+audio = ExtResource( 10 )
+title = "EUGENE_NAME"
+messages = [ "PARTNER_INTERACT_E_F1_EUGENE1" ]
+
+[node name="MessageDialogAction2" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 8 )
+portrait_position = 2
+audio = ExtResource( 7 )
+title = "FELIX_NAME"
+messages = [ "PARTNER_INTERACT_E_F1_FELIX2", "PARTNER_INTERACT_E_F1_FELIX3" ]
+
+[node name="MessageDialogAction3" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 11 )
+audio = ExtResource( 9 )
+title = "EUGENE_NAME"
+messages = [ "PARTNER_INTERACT_E_F1_EUGENE4" ]
+
+[node name="MessageDialogAction4" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 12 )
+portrait_position = 2
+audio = ExtResource( 14 )
+title = "FELIX_NAME"
+messages = [ "PARTNER_INTERACT_E_F1_FELIX5" ]
+
+[node name="MessageDialogAction5" type="Node" parent="ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+portrait = ExtResource( 18 )
+audio = ExtResource( 17 )
+title = "EUGENE_NAME"
+messages = [ "PARTNER_INTERACT_E_F1_EUGENE6" ]
