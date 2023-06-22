@@ -1,0 +1,28 @@
+﻿key,en
+ITEM_DUNGEON_GRAVEYARD_CLUE_1_DUBTITLES,"A piece of paper with some directions written in elegant, gilded print. Part of it has been torn off. The directions read: \n\n				“Up, Up, Down, Down...”\n\n“You've almost reached me. \n\n								All you need is to drop.”\n\n“It’s a long fall. \n\n							But I'll be here to catch you.”"
+ITEM_DUNGEON_GRAVEYARD_CLUE_2_DUBTITLES,"A piece of paper with some directions written in elegant, gilded print. The first half of it has been torn off. The directions read: /n“… Left, /n								Right,/nLeft, /n								Right./n/nIt must have been difficult, making it this far. Lasting this long. You must be so tired.\n\nI could help with that."
+AA_LAMENTO_MORI_DUBTITLE,The Promised Peace
+AA_LAMENTO_MORI_PRE_BATTLE_AA1_DUBTITLES,"No one could blame you,  you know. for being tired. for needing some rest.\n\nhaven’t you earned it?\n\nyou shouldn't have to worry about anything anymore."
+AA_LAMENTO_MORI_PRE_BATTLE_AA1_DUBTITLES_2,"so relax.		\nrelax your jaw, your shoulders. feel them grow comfortably loose and heavy.		\n		feel that weight sink down your back and legs.\n		your eyelids feel so heavy, don't they? so close your eyes. rest.		\n\nall you need is to let me in."
+AA_LAMENTO_MORI_PRE_BATTLE_AA1_DUBTITLES_3,"wouldn't it be nice? no more suffering, or pain, or regret. \n\nisn’t that why you’re here? to find an escape from all of that?"
+AA_LAMENTO_MORI_PRE_BATTLE_AA3_DUBTITLES,UGH. IGNORE THEM.
+AA_LAMENTO_MORI_PRE_BATTLE_AA3_DUBTITLES_2,"LISTEn,"
+AA_LAMENTO_MORI_PRE_BATTLE_AA3_DUBTITLES_3,Worry not your pretty little head.\n\ni’ll take care of everything.
+AA_LAMENTO_MORI_PRE_BATTLE_AA3_DUBTITLES_4,"...\n\nOr, if you prefer...\n\nI SUPPOSE WE CAN DO THIS THE HARD WAY."
+AA_LAMENTO_MORI_POST_BATTLE_LM1_DUBTITLES,WAIT. WHO'S THIS DOUCHEBAG?
+DUNGEON_GRAVEYARD_LM_1_DUBTITLES,"THESE DEPTHS ARE MINE.\n\nAnd now, so are you."
+DUNGEON_GRAVEYARD_LM_3_DUBTITLES,"Indulge me, little one.\n\nShow me how flesh meets flesh."
+DUNGEON_GRAVEYARD_LM_KILL_DUBTITLES,"Oh firm and steady hand		\n		who binds with trembling touch,\n\nTo what end do you conquer?		\n		And what throne will you mount, in time?"
+DUNGEON_GRAVEYARD_LM_KILL_DUBTITLES_2,"Oh, dear child,\n\nshall I teach you to tame me?"
+DUNGEON_GRAVEYARD_LM_2_DUBTITLES,It hurts to wander.		\n		It hurts to fight.\nIt hurts to think.		\n		It hurts to choose.\n\nThere is no hurt in death.
+DUNGEON_GRAVEYARD_LM_4_DUBTITLES,Is this what you would claim to seek?\n\nSome material reward?\n\nA safe haven to cling to?
+DUNGEON_GRAVEYARD_LM_4_DUBTITLES_2,"Deep down, we both know the truth."
+DUNGEON_GRAVEYARD_LM_5_DUBTITLES,"You've been so good. So strong, for so long.\n\nIt must be hard, pretending to hold it all together.\n\nBut you need not pretend with me."
+DUNGEON_GRAVEYARD_LM_6_DUBTITLES,"I pity you, O precious thing of soft and tender flesh.\n\nI pity you, even as I watch on in breathless wonder.\n\nYou are so good, but so fragile."
+DUNGEON_GRAVEYARD_LM_7_DUBTITLES,You're almost here.\n\nYou're doing so well.\n\nHold on for just a little longer.
+DUNGEON_GRAVEYARD_LM_8_DUBTITLES,The path is clear. I lie in wait.
+DUNGEON_GRAVEYARD_LM_8_DUBTITLES_2,So come.		\n	find me.	\n		join me.\n\nit could be the last decision\n\nyou would ever have to make
+REACTIVE_INTANGIBILITY_LM_TITLE,Tutorial: Reactive Intangibility
+REACTIVE_INTANGIBILITY_LM_HINT,A target with Reactive Intangibility will become temporarily immune to damage when struck.
+LAST_GASP_LM_TITLE,Tutorial: Last Gasp
+LAST_GASP_LM_HINT,A character will be instantly defeated if their Last Gasp runs out.
