@@ -1,0 +1,375 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=2]
+[ext_resource path="res://sfx/voices/meredith/meredith_laugh_2.wav" type="AudioStream" id=3]
+[ext_resource path="res://sprites/portraits/meredith.png" type="Texture" id=4]
+[ext_resource path="res://addons/misc_utils/actions/WaitAction.gd" type="Script" id=5]
+[ext_resource path="res://nodes/actions/MenuDialogAction.gd" type="Script" id=6]
+[ext_resource path="res://addons/misc_utils/actions/values/GetNode.gd" type="Script" id=7]
+[ext_resource path="res://addons/misc_utils/actions/composites/Sequence.gd" type="Script" id=8]
+[ext_resource path="res://sprites/portraits/meredith_happy.png" type="Texture" id=9]
+[ext_resource path="res://sfx/voices/meredith/meredith_accept.wav" type="AudioStream" id=10]
+[ext_resource path="res://nodes/actions/FaceTowardsAction.gd" type="Script" id=11]
+[ext_resource path="res://nodes/actions/values/GetPlayer.gd" type="Script" id=12]
+[ext_resource path="res://nodes/actions/values/GetPartner.gd" type="Script" id=13]
+[ext_resource path="res://nodes/actions/RelationshipUpAction.gd" type="Script" id=14]
+[ext_resource path="res://sfx/voices/meredith/meredith_laugh_1.wav" type="AudioStream" id=15]
+[ext_resource path="res://sprites/portraits/meredith_awkward.png" type="Texture" id=16]
+[ext_resource path="res://nodes/actions/TransitionAction.gd" type="Script" id=17]
+[ext_resource path="res://nodes/actions/MoveToWarpTargetAction.gd" type="Script" id=18]
+[ext_resource path="res://sprites/portraits/meredith_angry.png" type="Texture" id=19]
+[ext_resource path="res://sfx/voices/meredith/meredith_sigh_1.wav" type="AudioStream" id=20]
+[ext_resource path="res://nodes/actions/WarpAction.gd" type="Script" id=21]
+[ext_resource path="res://nodes/actions/ShowIllustrationAction.gd" type="Script" id=22]
+[ext_resource path="res://sprites/portraits/meredith_thinking.png" type="Texture" id=23]
+[ext_resource path="res://addons/misc_utils/actions/composites/Parallel.gd" type="Script" id=24]
+[ext_resource path="res://sprites/illustration/meredith_videotape.png" type="Texture" id=25]
+[ext_resource path="res://cutscenes/CampingAdvanceTime.tscn" type="PackedScene" id=26]
+[ext_resource path="res://sfx/voices/meredith/meredith_romantic.wav" type="AudioStream" id=27]
+[ext_resource path="res://nodes/actions/ChangeTrackerTargetAction.gd" type="Script" id=28]
+[ext_resource path="res://sprites/portraits/meredith_blushing.png" type="Texture" id=29]
+[ext_resource path="res://nodes/actions/PlayAnimationAction.gd" type="Script" id=30]
+[ext_resource path="res://sprites/portraits/meredith_shocked.png" type="Texture" id=31]
+[ext_resource path="res://sfx/voices/meredith/meredith_sigh_2.wav" type="AudioStream" id=32]
+[ext_resource path="res://nodes/actions/IsPlayerPronoun.gd" type="Script" id=33]
+[ext_resource path="res://nodes/actions/SetRelationshipKindAction.gd" type="Script" id=34]
+[ext_resource path="res://sfx/voices/meredith/meredith_laugh_3.wav" type="AudioStream" id=35]
+
+[node name="Cutscene" type="Node"]
+script = ExtResource( 1 )
+require_partner_id = "meredith"
+min_partner_relationship_level = 4
+max_partner_relationship_level = 4
+require_partner_ready_for_relationship_level_up = true
+require_scene_path = "Gramophone"
+priority = 100
+
+[node name="MessageDialogAction" type="Node" parent="."]
+script = ExtResource( 2 )
+portrait = ExtResource( 4 )
+audio = ExtResource( 10 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH1", "MEREDITH_SOCIAL4_MEREDITH2" ]
+close_after = false
+
+[node name="MessageDialogAction2" type="Node" parent="."]
+script = ExtResource( 2 )
+portrait = ExtResource( 9 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH3" ]
+wait_for_confirm = false
+close_after = false
+
+[node name="MenuDialogAction" type="Node" parent="."]
+script = ExtResource( 6 )
+menu_options = [ "MEREDITH_SOCIAL4_MEREDITH3_OPTION1", "MEREDITH_SOCIAL4_MEREDITH3_OPTION2" ]
+default_option = 1
+always_succeed = true
+
+[node name="Sequence" type="Node" parent="MenuDialogAction"]
+script = ExtResource( 8 )
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 2 )
+portrait = ExtResource( 9 )
+audio = ExtResource( 3 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH5" ]
+
+[node name="WarpAction" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 21 )
+warp_target_scene = "res://world/maps/interiors/MeredithSocial4Home.tscn"
+warp_target_name = "Social4WarpTarget"
+transition_kind = 2
+disable_scene_preservation = true
+
+[node name="WaitAction" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 5 )
+
+[node name="MessageDialogAction2" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 2 )
+portrait = ExtResource( 9 )
+audio = ExtResource( 15 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH6" ]
+wait_for_confirm = false
+close_after = false
+
+[node name="MenuDialogAction" type="Node" parent="MenuDialogAction/Sequence/MessageDialogAction2"]
+script = ExtResource( 6 )
+menu_options = [ "MEREDITH_SOCIAL4_MEREDITH6_OPTION1", "MEREDITH_SOCIAL4_MEREDITH6_OPTION2" ]
+always_succeed = true
+
+[node name="FaceTowardsAction" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 11 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetPartner" type="Node" parent="MenuDialogAction/Sequence/FaceTowardsAction"]
+script = ExtResource( 13 )
+
+[node name="GetPlayer" type="Node" parent="MenuDialogAction/Sequence/FaceTowardsAction"]
+script = ExtResource( 12 )
+which = 1
+
+[node name="MessageDialogAction3" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 2 )
+portrait = ExtResource( 16 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH7" ]
+
+[node name="TransitionAction" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 17 )
+transition_kind = 2
+
+[node name="MoveToWarpTargetAction" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 18 )
+__meta__ = {
+"action_tree": true
+}
+
+[node name="GetNode" type="Node" parent="MenuDialogAction/Sequence/MoveToWarpTargetAction"]
+script = ExtResource( 7 )
+node_name = "SofaWarpTarget"
+
+[node name="TransitionAction2" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 17 )
+transition = 1
+transition_kind = 2
+
+[node name="WaitAction3" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 5 )
+base_seconds = 0.5
+
+[node name="ChangeTrackerTargetAction" type="Node" parent="MenuDialogAction/Sequence"]
+script = ExtResource( 28 )
+speed_multiplier = 1.0
+zoom = 1.5
+angle_degrees_override = Vector3( -25, 0, 0 )
+
+[node name="GetNode" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 7 )
+node_name = "CameraTarget"
+
+[node name="WaitAction2" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 5 )
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 19 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH8" ]
+close_after = false
+
+[node name="Parallel" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 24 )
+
+[node name="ShowIllustrationAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/Parallel"]
+script = ExtResource( 22 )
+illustration = ExtResource( 25 )
+animation = 1
+mute_music = false
+
+[node name="MessageDialogAction2" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/Parallel"]
+script = ExtResource( 2 )
+portrait = ExtResource( 23 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH9", "MEREDITH_SOCIAL4_MEREDITH10", "MEREDITH_SOCIAL4_MEREDITH11", "MEREDITH_SOCIAL4_MEREDITH12", "MEREDITH_SOCIAL4_MEREDITH13", "MEREDITH_SOCIAL4_MEREDITH14" ]
+
+[node name="ChangeTrackerTargetAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 28 )
+zoom = 2.5
+angle_degrees_override = Vector3( -25, 0, 0 )
+
+[node name="GetNode" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/ChangeTrackerTargetAction"]
+script = ExtResource( 7 )
+node_name = "TapePile"
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 4 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH15", "MEREDITH_SOCIAL4_MEREDITH16" ]
+close_after = false
+
+[node name="MessageDialogAction2" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 19 )
+audio = ExtResource( 20 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH17", "MEREDITH_SOCIAL4_MEREDITH18" ]
+close_after = false
+
+[node name="MessageDialogAction3" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 9 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH19" ]
+wait_for_confirm = false
+close_after = false
+
+[node name="MenuDialogAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MessageDialogAction3"]
+script = ExtResource( 6 )
+menu_options = [ "MEREDITH_SOCIAL4_MEREDITH19_OPTION1", "MEREDITH_SOCIAL4_MEREDITH19_OPTION2" ]
+always_succeed = true
+
+[node name="MessageDialogAction2" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 9 )
+audio = ExtResource( 35 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH20" ]
+close_after = false
+
+[node name="MessageDialogAction4" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 29 )
+audio = ExtResource( 27 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH21", "MEREDITH_SOCIAL4_MEREDITH22" ]
+wait_for_confirm = false
+close_after = false
+
+[node name="MenuDialogAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 6 )
+menu_options = [ "MEREDITH_SOCIAL4_MEREDITH22_OPTION1", "MEREDITH_SOCIAL4_MEREDITH22_OPTION2" ]
+always_succeed = true
+
+[node name="Platonic" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction"]
+script = ExtResource( 8 )
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Platonic"]
+script = ExtResource( 2 )
+portrait = ExtResource( 9 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_PLATONIC_MEREDITH1" ]
+
+[node name="WaitAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Platonic"]
+script = ExtResource( 5 )
+
+[node name="MessageDialogAction2" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Platonic"]
+script = ExtResource( 2 )
+portrait = ExtResource( 16 )
+audio = ExtResource( 10 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_PLATONIC_MEREDITH2", "MEREDITH_SOCIAL4_PLATONIC_MEREDITH3" ]
+
+[node name="Romantic_UwU" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction"]
+script = ExtResource( 8 )
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 2 )
+portrait = ExtResource( 31 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH1" ]
+close_after = false
+
+[node name="MessageDialogAction2" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 2 )
+portrait = ExtResource( 29 )
+audio = ExtResource( 32 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH2", "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH3", "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH4" ]
+
+[node name="WaitAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 5 )
+
+[node name="MessageDialogAction3" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 2 )
+portrait = ExtResource( 29 )
+audio = ExtResource( 3 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH5" ]
+close_after = false
+
+[node name="MessageDialogAction4" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 2 )
+portrait = ExtResource( 16 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH6" ]
+close_after = false
+
+[node name="IsPlayerPronoun" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 33 )
+invert = true
+always_succeed = true
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU/IsPlayerPronoun"]
+script = ExtResource( 2 )
+portrait = ExtResource( 16 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH7" ]
+close_after = false
+
+[node name="MessageDialogAction5" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 2 )
+portrait = ExtResource( 9 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH8" ]
+close_after = false
+
+[node name="MessageDialogAction6" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 2 )
+portrait = ExtResource( 29 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH9", "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH10" ]
+close_after = false
+
+[node name="MessageDialogAction7" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 2 )
+portrait = ExtResource( 16 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_ROMANTIC_MEREDITH11" ]
+
+[node name="SetRelationshipKindAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/MenuDialogAction/Romantic_UwU"]
+script = ExtResource( 34 )
+relationship_kind = 1
+
+[node name="WaitAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 5 )
+
+[node name="PlayAnimationAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 30 )
+__meta__ = {
+"action_tree": true
+}
+animation_name = "movie"
+wait_for_animation = false
+
+[node name="GetNode" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/PlayAnimationAction"]
+script = ExtResource( 7 )
+node_name = "MovieProjectorScreen"
+
+[node name="WaitAction3" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 5 )
+
+[node name="TransitionAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 17 )
+transition_kind = 5
+
+[node name="RelationshipUpAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction"]
+script = ExtResource( 14 )
+
+[node name="CampingAdvanceTime" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction" instance=ExtResource( 26 )]
+
+[node name="AdvanceTimeAction" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/CampingAdvanceTime" index="6"]
+advance_until = 7.0
+advance_until_bb_key = ""
+
+[node name="WarpAction" type="Node" parent="MenuDialogAction/Sequence/ChangeTrackerTargetAction/CampingAdvanceTime/WaitAction" index="0"]
+script = ExtResource( 21 )
+warp_target_scene = "res://world/maps/Overworld.tscn"
+warp_target_name = "MeredithHome/WarpRegion"
+warp_target_chunk = Vector2( 1, 0 )
+transition_kind = 2
+disable_scene_preservation = true
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 4 )
+title = "MEREDITH_NAME"
+messages = [ "MEREDITH_SOCIAL4_MEREDITH4" ]
+
+[editable path="MenuDialogAction/Sequence/ChangeTrackerTargetAction/CampingAdvanceTime"]

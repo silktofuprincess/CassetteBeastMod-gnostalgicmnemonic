@@ -1,0 +1,74 @@
+K	It feels weird being back here...
+J	May we have quiet in the audience!
+K	Who is she? Is she… my replacement? Creepy.
+J	Dorian will now speak!
+D	[pause].[pause].[pause].
+D	[wave amp=30 freq=10]HOW’S IT GOIN’, EVERYBODY![/wave]
+D	Man, what a great crowd you always are!
+D	Listen, [pause]guys, [pause][wave amp=30 freq=10]mournchildren[/wave] or whatever, you’ve all been doing such a great job with the digging.
+D	I mean seriously, this is a [wave amp=30 freq=10]primo[/wave] quality hole! 
+D	This pit is as [wave amp=30 freq=10]deep[/wave] as your devotion to the cause. [pause]It’s like a [wave amp=30 freq=10]metaphor[/wave]!
+D	When I first heard the [wave amp=30 freq=10]whispers in my head[/wave] guiding me beneath the earth, I knew I couldn’t do this alone.
+D	And sure, [pause]we’ve had ups and downs...
+D	But we’ve done it! [pause]Pull the curtain!
+J	As you wish, sir.
+
+D	[shake rate=30 level=10]THE SERPENT GOD AWAITS US, BABY![/shake]
+D	Soon I will enter the chamber and bargain with him for a share of his [wave amp=30 freq=10]divine power![/wave]
+D	And to accompany me, [pause]our prodigal daughter returns to us!
+D	Isn’t that right… [wave amp=30 freq=10]Kayleigh[/wave]?
+K	Oh no.
+D	Kayleigh, [pause]honey, [pause]you look like a deer in the headlights! [pause]Of course I got word you were joining us for our big party!
+D	KAYLEIGH_QUEST2_PART2_DORIAN19
+K	{player}...
+K	I’m sorry...
+K	I’ll explain later. We need to put a stop to this for now.
+D	You didn’t believe in me, did you? Well it looks like I was [wave amp=30 freq=10]right all along, baby![/wave]
+D	There’s a [shake rate=30 level=10]real damn Archangel[/shake] right under our feet!
+K	We’ve [wave amp=30 freq=10]fought[/wave] Archangels, Dorian! 
+K	If you go in there, you’ll get yourself killed!
+D	KAYLEIGH_QUEST2_PART2_DORIAN27
+D	C’mon, watch me [wave amp=30 freq=10]ascend to godhood[/wave] with my new Archangel buddy!
+D	Jacqueline – the platform, if you please.
+J	As you wish, sir.
+D	[wave amp=30 freq=10]See you inside[/wave], Kayleigh!
+K	I hate him so much.
+K	C’mon, let’s go stop this idiot from whatever he thinks he’s doing.
+
+D	KAYLEIGH_QUEST2_PART3_DORIAN1
+D	I have made the tactical decision to [wave amp=30 freq=10]amend the plan![/wave]
+D	Sir…?
+D	KAYLEIGH_QUEST2_PART3_DORIAN4
+K	You’re a fool and you’re going to get yourself killed.
+D	You [wave amp=30 freq=10]first[/wave].
+
+K	[wave amp=30 rate=10]I told him this would happen![/wave]
+K	C’mon {player}, let’s stop this thing before it kills [wave amp=30 rate=10]anyone[/wave] else!
+
+D	...
+J	Dorian…
+K	I’m sorry, [pause]but it’s his own fault.
+K	We should all get out of here. [pause][pause]The air here tastes like death.
+
+J	Dorian…
+J	The commune...
+J	Will open its gates. We will try and find common ground with the rest of New Wirral.
+J	We only wanted guidance… [pause]We [pause]never…
+K	I know.
+K	The people of this community aren’t bad people.
+K	You just have to be wary of those you put your faith into.
+
+That was messed up…
+K	I’m… [pause][pause][pause]I’ll be fine.
+K	I feel awful for helping Dorian for so long, but... [pause]I blame him more than I blame myself.
+K	I found the Mournchildren around the same time he did. [pause]I needed that sense of community and belonging.
+K	He and I became good friends, and I was something of an... [pause]assistant to him.
+K	I don’t know if things just slowly changed, or if things were never good, [pause]but Dorian’s hold over the people of Mourningtown became something sinister. 
+K	It became about him, his wants, his dreams and delusions. It was no longer the community I desperately wished it was...
+K	People were hurt, and I helped smooth things over for him. 
+K	No… [pause]I wasn’t his “assistant”—I was his fixer.
+K	I felt for so long like I was doing good – [pause]helping to maintain a positive status quo, even if people would get hurt now and then.
+K	I’m not a good person, {player}.
+K	Heh… I’m glad you believe that.
+K	I hope they all do better with him gone now. 
+K	Lost people look for guidance, [pause]and that’s what Dorian offered them.

@@ -1,0 +1,34 @@
+Hey, uh, do you wanna come on over to my place? I have something I wanted to show you.
+	Sure!
+	Not now.
+		No problem – I guess I have more time to practice then!
+Brilliant!
+I-I wanted to play you something. My dad used to sing this to me, and it was the first song I ever learned to play.
+You've been wonderful to me, and I wanted to do a little something for you.
+Are you ready?
+	Yeah!
+So, what did you think?
+	That was amazing!
+		Aw, don’t go making me blush now!
+			I hope you keep playing.
+				[Platonic]
+			I think I want to kiss you right now.
+				[Romantic]
+	I think I want to kiss you right now.
+		Aw, you sure it's not just the magical effect of seeing a guitarist at work?
+		I got my first girl crush seeing a friend play drums in a band when we were in college. I think I just fall for musicians easily.
+			Joking aside, I do hope you continue to play!
+				[Platonic]
+			RESTING_KAYLEIGH_SOCIAL3_ROMANTIC_KAYLEIGH2_OPTION2
+				[Romantic]
+
+[Romantic]
+I…
+If you want to kiss me…
+I think now would be a good time.
+
+[Platonic]
+So do I! Maybe we should write a song together, whilst out on our travels? 
+Sounds like a wee bit of fun, doesn’t it?
+I’m game!
+Then it’s settled! Let’s do it!
