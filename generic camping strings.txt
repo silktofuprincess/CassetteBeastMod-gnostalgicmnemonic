@@ -1,0 +1,71 @@
+...Ben, au final, c't'igidou, hein?
+
+Eugene Dating
+Eugene tells you about the kind of place he’d like to live one day.
+Eugene and you casually discuss your romantic history.
+Eugene brags about his prowess at cooking romantic dinners.
+Eugene shares a funny anecdote with you. He has many.
+Eugene asks you about your hopes and dreams, and listens diligently.
+
+Eugene Platonic
+Eugene chats to you about his favourite workout routines.
+Eugene and you discuss new potential battle strategies.
+Eugene excitedly tells you about goings on in Harbourtown.
+The two of you trade battle tips as time passes uneventfully.
+Eugene discusses with you the differences between your two worlds.
+
+
+Felix Dating
+Felix shows you some drawings he’s recently done.
+Felix eagerly tells you about some new story ideas he had recently.
+Felix politely listens to your thoughts.
+Felix chats with you about your favourite food.
+The two of you bond over some shared experiences.
+
+Felix Platonic
+Felix quietly and intently sketches as the time passes.
+Felix muses about food he’s unable to acquire in New Wirral.
+Felix recollects some fun anecdotes about citizens of Harbourtown.
+
+
+Kayleigh Dating
+You and Kayleigh discuss fond memories of places you visited as children.
+The two of you laugh over embarrassing moments you’ve experienced.
+Kayleigh discusses her aspirations with you.
+The two of you have a light-hearted conversation about your romantic histories.
+Kayleigh chats to you about the places on earth she’d like to visit.
+
+Kayleigh Platonic
+Kayleigh engages you with an enthusiastic discussion on your favourite dog breeds.
+You and Kayleigh casually discuss the mysteries of New Wirral.
+Kayleigh tells you a funny anecdote about her life.
+Kayleigh tells you about her various ventures helping out the people of Harbourtown.
+	[deny_scene_path = "Gramophone"]
+The two of you have fun throwing twigs into the campfire.
+
+
+Meredith Dating
+Meredith describes to you in great detail a horror movie she once saw on television.
+You and Meredith discuss places you’d like to visit one day.
+Meredith works up the courage to compliment your appearance.
+The two of you have a personal and intimate conversation.
+You compliment Meredith and it greatly embarrasses her. She appreciates it, though.
+
+Meredith Platonic
+Meredith makes small-talk with you.
+You try to make small-talk with Meredith, but she’s not very talkative at the moment.
+Meredith complains about some minor grievances in her day while you listen.
+Meredith eagerly recounts the plot of a fantasy novel she adores.
+The two of you sit quietly. Meredith doesn’t have much to say right now.
+
+
+Viola Dating
+Viola recites some beautiful poetry she once studied. Her performance is beautiful.
+The two of you exchange some cute pleasantries.
+Viola tells you about her aspirations in a rather personal conversation.
+
+Viola Platonic
+Viola tells you tales of her adventures as a child.
+Viola tells you of the beauty of her home country of Messaline.
+Viola asks eagerly about what your life was like before you came to New Wirral.
+You tell Viola about life back on your world
