@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://nodes/actions/Cutscene.gd" type="Script" id=1]
+[ext_resource path="res://nodes/actions/MessageDialogAction.gd" type="Script" id=2]
+[ext_resource path="res://sprites/portraits/kayleigh.png" type="Texture" id=3]
+[ext_resource path="res://sfx/voices/kayleigh/kayleigh_thinking_1.wav" type="AudioStream" id=4]
+[ext_resource path="res://addons/misc_utils/actions/WaitAction.gd" type="Script" id=5]
+[ext_resource path="res://nodes/actions/MenuDialogAction.gd" type="Script" id=6]
+[ext_resource path="res://sprites/portraits/kayleigh_happy.png" type="Texture" id=7]
+[ext_resource path="res://sfx/voices/kayleigh/kayleigh_laugh_1.wav" type="AudioStream" id=8]
+
+[node name="Cutscene" type="Node"]
+script = ExtResource( 1 )
+one_time_flag = "kayleigh_convo_1"
+require_partner_id = "kayleigh"
+min_partner_relationship_level = 1
+
+[node name="MessageDialogAction" type="Node" parent="."]
+script = ExtResource( 2 )
+portrait = ExtResource( 3 )
+audio = ExtResource( 4 )
+title = "KAYLEIGH_NAME"
+messages = [ "RESTING_KAYLEIGH_CONVO1_KAYLEIGH1", "RESTING_KAYLEIGH_CONVO1_KAYLEIGH2" ]
+
+[node name="WaitAction" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="MessageDialogAction2" type="Node" parent="."]
+script = ExtResource( 2 )
+portrait = ExtResource( 3 )
+title = "KAYLEIGH_NAME"
+messages = [ "RESTING_KAYLEIGH_CONVO1_KAYLEIGH3" ]
+wait_for_confirm = false
+close_after = false
+
+[node name="MenuDialogAction" type="Node" parent="."]
+script = ExtResource( 6 )
+menu_options = [ "RESTING_KAYLEIGH_CONVO1_KAYLEIGH3_OPTION_DOG", "RESTING_KAYLEIGH_CONVO1_KAYLEIGH3_OPTION_CAT", "RESTING_KAYLEIGH_CONVO1_KAYLEIGH3_OPTION_FERRET" ]
+always_succeed = true
+
+[node name="MessageDialogAction" type="Node" parent="MenuDialogAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 7 )
+audio = ExtResource( 8 )
+title = "KAYLEIGH_NAME"
+messages = [ "RESTING_KAYLEIGH_CONVO1_DOG_KAYLEIGH1", "RESTING_KAYLEIGH_CONVO1_DOG_KAYLEIGH2", "RESTING_KAYLEIGH_CONVO1_DOG_KAYLEIGH3" ]
+
+[node name="MessageDialogAction2" type="Node" parent="MenuDialogAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 7 )
+audio = ExtResource( 8 )
+title = "KAYLEIGH_NAME"
+messages = [ "RESTING_KAYLEIGH_CONVO1_CAT_KAYLEIGH1", "RESTING_KAYLEIGH_CONVO1_CAT_KAYLEIGH2", "RESTING_KAYLEIGH_CONVO1_CAT_KAYLEIGH3" ]
+
+[node name="MessageDialogAction3" type="Node" parent="MenuDialogAction"]
+script = ExtResource( 2 )
+portrait = ExtResource( 3 )
+title = "KAYLEIGH_NAME"
+messages = [ "RESTING_KAYLEIGH_CONVO1_FERRET_KAYLEIGH1", "RESTING_KAYLEIGH_CONVO1_FERRET_KAYLEIGH2", "RESTING_KAYLEIGH_CONVO1_FERRET_KAYLEIGH3" ]
