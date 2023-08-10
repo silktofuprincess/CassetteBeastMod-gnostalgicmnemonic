@@ -1,0 +1,47 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/elemental_types/earth.tres" type="Resource" id=1]
+[ext_resource path="res://data/loot_tables/picksie_treasure_dig_low_level.tres" type="Resource" id=2]
+[ext_resource path="res://data/battle_move_scripts/TreasureDig.gd" type="Script" id=3]
+[ext_resource path="res://data/sticker_attribute_profiles/misc.tres" type="Resource" id=4]
+[ext_resource path="res://data/loot_tables/picksie_treasure_dig_high_level.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 3 )
+name = "MOVE_NAME_TREASURE_DIG"
+category_name = "MOVE_CATEGORY_MISC"
+description = "MOVE_DESCRIPTION_TREASURE_DIG"
+title_override = ""
+tags = [ "unsellable", "picksie" ]
+priority = 0
+cost = 2
+is_debug = false
+is_passive_only = false
+power = 0
+physicality = 0
+target_type = 0
+default_target = 0
+elemental_types = [ ExtResource( 1 ) ]
+accuracy = 50
+unavoidable = false
+crit_rate_numerator = 1
+crit_rate_denominator = 16
+crit_damage_percent = 150
+play_attack_animation = true
+fade_lights_during_attack = false
+windup_animation = "windup"
+attack_animation = "attack"
+windup_sfx_override = [  ]
+attack_vfx = [  ]
+play_attack_vfx_against_allies = true
+attack_duration = 0.0
+hit_vfx = [  ]
+hit_delay = 0.0
+disable_melee_movement = false
+can_be_copied = true
+attribute_profile = ExtResource( 4 )
+camera_state_override = ""
+loot_table_high_level = ExtResource( 5 )
+loot_table_low_level = ExtResource( 2 )
+max_value = 50
+toast_color = Color( 0.945098, 0.760784, 0.333333, 1 )
