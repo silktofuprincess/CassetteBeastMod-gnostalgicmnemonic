@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/items/wood.tres" type="Resource" id=1]
+[ext_resource path="res://sprites/items/respool.png" type="Texture" id=2]
+[ext_resource path="res://data/item_scripts/TapeReviveItem.gd" type="Script" id=3]
+[ext_resource path="res://sfx/status_effects/healing.wav" type="AudioStream" id=4]
+[ext_resource path="res://data/hit_vfx/status_healing_1.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 3 )
+name = "ITEM_RESPOOL_NAME"
+aux_name = ""
+icon = ExtResource( 2 )
+description = "ITEM_RESPOOL_DESCRIPTION"
+category = "consumables"
+base_stack_limit = 1
+stack_limit_category = "respool"
+consume_on_use = true
+discardable = true
+recycle_to = ExtResource( 1 )
+value = 150
+usable_contexts = 11
+battle_usage = 0
+sort_order = -9
+heal_percent = 100
+heal_sound = ExtResource( 4 )
+heal_vfx = [ ExtResource( 5 ) ]

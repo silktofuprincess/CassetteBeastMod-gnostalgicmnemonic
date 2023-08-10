@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/items/wood.tres" type="Resource" id=1]
+[ext_resource path="res://sprites/items/rewind.png" type="Texture" id=2]
+[ext_resource path="res://data/item_scripts/TapeHealingItem.gd" type="Script" id=3]
+[ext_resource path="res://sfx/status_effects/healing.wav" type="AudioStream" id=4]
+[ext_resource path="res://data/hit_vfx/status_healing_1.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 3 )
+name = "ITEM_REWIND_NAME"
+aux_name = ""
+icon = ExtResource( 2 )
+description = "ITEM_REWIND_DESCRIPTION"
+category = "consumables"
+base_stack_limit = 5
+stack_limit_category = "rewind"
+consume_on_use = true
+discardable = true
+recycle_to = ExtResource( 1 )
+value = 10
+usable_contexts = 11
+battle_usage = 0
+sort_order = -10
+heal_percent = 100
+heal_sound = ExtResource( 4 )
+heal_vfx = [ ExtResource( 5 ) ]

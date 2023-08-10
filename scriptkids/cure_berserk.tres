@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://data/items/plastic.tres" type="Resource" id=1]
+[ext_resource path="res://sprites/items/cure_berserk.png" type="Texture" id=2]
+[ext_resource path="res://data/hit_vfx/status_healing_1.tres" type="Resource" id=3]
+[ext_resource path="res://data/status_effects/berserk.tres" type="Resource" id=4]
+[ext_resource path="res://data/item_scripts/StatusClearItem.gd" type="Script" id=5]
+
+[resource]
+script = ExtResource( 5 )
+name = "ITEM_CURE_BERSERK_NAME"
+aux_name = ""
+icon = ExtResource( 2 )
+description = "ITEM_CURE_BERSERK_DESCRIPTION"
+category = "consumables"
+base_stack_limit = 3
+stack_limit_category = "cure"
+consume_on_use = true
+discardable = true
+recycle_to = ExtResource( 1 )
+value = 100
+usable_contexts = 2
+battle_usage = 2
+sort_order = 10
+clear_status_types = [  ]
+clear_extended_status_types = true
+clear_statuses = [ ExtResource( 4 ) ]
+battle_vfx = [ ExtResource( 3 ) ]
